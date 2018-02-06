@@ -1,0 +1,16 @@
+machine:
+  python:
+    version:
+      2.7.12
+
+dependencies:
+  override:
+    - pip install -r requirements/test.txt
+    - pip install coveralls
+
+test:
+  override:
+    - cd api; coverage run manage.py test --settings=config.settings.test
+  post:
+    - cd api; coverage html -d $CIRCLE_ARTIFACTS
+    - cd api; coveralls

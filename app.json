@@ -1,0 +1,21 @@
+{
+  "name": "Library REST API with Swagger",
+  "description": "This project is intended to handle library books and authors.",
+  "repository": "https://github.com/jesuscg/library-api-swagger",
+  "keywords": ["django", "swagger", "rest", "framework", "api", "library"],
+  "success_url": "/api/v1/docs/",
+  "scripts": {
+    "postdeploy": "python api/manage.py migrate --noinput"
+  },
+  "env": {
+    "DJANGO_SETTINGS_MODULE": {
+      "value": "config.settings.production"
+    }
+  },
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}

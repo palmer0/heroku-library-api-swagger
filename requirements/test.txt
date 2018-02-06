@@ -1,0 +1,4 @@
+-r base.txt
+coverage==4.2
+django-debug-toolbar==1.5
+sqlparse==0.2.2

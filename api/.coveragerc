@@ -1,0 +1,6 @@
+[run]
+source = .
+omit =  api_books/test*.py
+        api_books/migrations/*.py
+        config/settings/production.py
+        config/wsgi_heroku.py
